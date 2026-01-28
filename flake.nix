@@ -2,9 +2,22 @@
   description = "Inferno214221's Flake Repository";
 
   inputs = {
-    timekeeper.url = "github:inferno214221/timekeeper";
-    simple-tab-groups.url = "github:inferno214221/simple-tab-groups";
-    kali-dark-vscode.url = "github:inferno214221/kali-dark-vscode";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
+
+    timekeeper = {
+      url = "github:inferno214221/timekeeper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    simple-tab-groups = {
+      url = "github:inferno214221/simple-tab-groups";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    kali-dark-vscode = {
+      url = "github:inferno214221/kali-dark-vscode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
